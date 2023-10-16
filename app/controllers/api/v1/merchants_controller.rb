@@ -1,33 +1,38 @@
 class Api::V1::MerchantsController < ApplicationController
   def index
-    merchants = Merchant.all
-    render json: merchants
+    render json: Merchant.all
   end
         
   def show
-    merchant = Merchant.find(params[:id])
-    render json: merchant
+    render json: Merchant.find(params[:id])
   end
 
   def new
   end
 
   def create
-    merchant = Merchant.create(name: params[:name])
+    merchant = Merchant.create(merchant_params)
 
     if merchant.save
-      render json: Merchant.new(merchant), status: :created
+      render json: merchant, status: :created
     else
-      render json: { errors: merchant.errors.full_messages }, status: :unprocessable_entity
+      render json: merchant.errors, status: :unprocessable_entity
     end
   end
 
-  def edit
+  def update
+    render json: Merchant.update(params[:id], merchant_params)
   end
 
   def destroy
     Merchant.find(params[:id]).destroy!
 
     head :no_content
+  end
+
+  private
+
+  def merchant_params
+    params.require(:merchant).permit(:name)
   end
 end

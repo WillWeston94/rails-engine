@@ -1,7 +1,68 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/williamweston/Turing/3-mod/2week/rails-engine/app/models/merchant.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/williamweston/Turing/3-mod/2week/rails-engine/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/williamweston/Turing/3-mod/2week/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/williamweston/Turing/3-mod/2week/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      }
     },
-    "timestamp": 1697495140
+    "timestamp": 1697500092
   }
 }
