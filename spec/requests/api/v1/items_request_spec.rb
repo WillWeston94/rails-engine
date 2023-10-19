@@ -135,6 +135,21 @@ RSpec.describe "Items API Paths" do
     end
   end
 
+  describe "Update Endpoint Sad Path" do
+    it "cannot update an existing item with invalid params and returns error status" do
+      merchant = create(:merchant)
+      id = create(:item, merchant_id: merchant.id).id
+
+      item_params = { name: "Test Sad Path", merchant_id: 9999 }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      patch "/api/v1/items/#{id}", headers: headers, params: JSON.generate({item: item_params})
+
+      expect(response.status).to eq(422)
+    end
+  end
+
   describe "Get an Items Merchant" do
     it "can get the merchant for an item" do
       merchant = create(:merchant)
